@@ -15,4 +15,5 @@ athena_stack = AthenaStack(app)
 kinesis_stack = KinesisStack(app, data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
 #common_stack = CommonStack(app)
 
+
 app.synth()
