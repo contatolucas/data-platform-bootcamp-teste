@@ -13,7 +13,7 @@ data_lake = DataLakeStack(app)
 glue_catalog = GlueCatalogStack(app, data_lake_bucket=data_lake.data_lake_raw_bucket)
 athena_stack = AthenaStack(app)
 kinesis_stack = KinesisStack(app, data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
-common_stack = CommonStack(app)
+#common_stack = CommonStack(app)
 
 
 app.synth()
