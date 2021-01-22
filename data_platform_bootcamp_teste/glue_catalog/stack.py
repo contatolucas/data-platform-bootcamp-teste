@@ -40,3 +40,6 @@ class GlueCatalogStack(core.Stack):
         self.orders_table = OrdersTable(
             self, glue_database=self.database, glue_role=self.role
         )
+
+        self.orders_table.node.add_dependency(self.database)
+        self.orders_table.node.add_dependency(self.role)
