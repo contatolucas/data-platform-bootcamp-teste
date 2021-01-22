@@ -1,0 +1,16 @@
+*.swp
+package-lock.json
+__pycache__
+.pytest_cache
+.env
+.venv
+*.egg-info
+.vscode
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+.idea
+.DS_Store
+pip-wheel-metadata
+data_platform_bootcamp_teste/data_platform_bootcamp_teste.egg-info
