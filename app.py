@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from athena.stack import AthenaStack
+#from athena.stack import AthenaStack
 from aws_cdk import core
 
 from data_platform_bootcamp_teste.data_lake.stack import DataLakeStack
