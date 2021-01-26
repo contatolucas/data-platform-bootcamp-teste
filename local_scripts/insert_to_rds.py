@@ -11,10 +11,10 @@ dsn = (
     "port={port} "
     "host={host} ".format(
         dbname="orders",
-        user="postgres",
-        password=os.environ["PASSWORD"], # ver como recuperar senha via boto3 (Secrets Manager)
+        user=os.environ.get('DB_USER'),
+        password=os.environ.get('DB_PASSWORD'), # ver como recuperar senha via boto3 (Secrets Manager)
         port=5432,
-        host="rds-dev-orders-db.cpqbjokcgyjl.us-east-1.rds.amazonaws.com",
+        host=os.environ.get('DB_HOST'),
     )
 )
 
@@ -39,7 +39,7 @@ products = {
     "borracha": 0.3,
     "iphone": 1000000.00,
 }
-idx = 0
+idx = 4035
 
 while True:
     print(idx)
