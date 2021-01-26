@@ -33,7 +33,7 @@ class GlueCatalogStack(core.Stack):
             table_name="atomic_events",
             #schedule_expression="cron(0/15 * * * ? *)",
             #schedule_expression="cron(0 22 * * 1/7 *)",
-            schedule_expression="cron(0 22 * * ? *)",
+            schedule_expression="cron(0 22 ? * 1/7 *)",
         )
 
         self.atomic_events_crawler.node.add_dependency(self.database)
