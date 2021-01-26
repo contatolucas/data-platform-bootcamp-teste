@@ -5,7 +5,7 @@ from data_platform_bootcamp_teste.data_lake.stack import DataLakeStack
 from glue_catalog.stack import GlueCatalogStack
 from kinesis.stack import KinesisStack
 from common_stack import CommonStack
-#from dms.stack import DmsStack
+from dms.stack import DmsStack
 
 app = core.App()
 
@@ -14,7 +14,8 @@ glue_catalog = GlueCatalogStack(app, data_lake_bucket=data_lake.data_lake_raw_bu
 athena_stack = AthenaStack(app)
 kinesis_stack = KinesisStack(app, data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
 common_stack = CommonStack(app)
-
-#dms_stack = DmsStack(app, data_lake_raw_bucket=data_lake_raw_bucket, common_stack=common_stack)
+dms_stack = DmsStack(
+    app, data_lake_raw_bucket=data_lake.data_lake_raw_bucket, common_stack=common_stack
+)
 
 app.synth()
