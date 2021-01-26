@@ -31,9 +31,9 @@ class GlueCatalogStack(core.Stack):
             glue_database=self.database,
             glue_role=self.role,
             table_name="atomic_events",
-            #schedule_expression="cron(0/15 * * * ? *)",
-            #schedule_expression="cron(0 22 * * 1/7 *)",
-            schedule_expression="cron(0 22 ? * 1/7 *)",
+            #schedule_expression="cron(0/15 * * * ? *)", # a cada 15 mnts todo dia
+            #schedule_expression="cron(0 2 * * ? *)", # uma vez por dia as 2h
+            schedule_expression="cron(0 22 ? * 1/7 *)", # uma vez a cada 7 dias as 22h
         )
 
         self.atomic_events_crawler.node.add_dependency(self.database)
