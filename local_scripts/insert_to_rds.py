@@ -39,7 +39,7 @@ products = {
     "borracha": 0.3,
     "iphone": 1000000.00,
 }
-idx = 4035
+idx = 0
 
 while True:
     print(idx)
